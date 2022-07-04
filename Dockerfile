@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM github.com/dotnet/dotnet-docker
 
 WORKDIR /usr/src/app
 
