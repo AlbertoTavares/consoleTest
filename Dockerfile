@@ -1,4 +1,4 @@
-FROM github.com/dotnet/dotnet-docker
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 
 WORKDIR /usr/src/app
 
