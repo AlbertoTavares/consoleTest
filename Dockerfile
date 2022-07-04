@@ -9,8 +9,12 @@ WORKDIR /usr/src/app
 # ie, no need to restore the packages again unless they change!
 #COPY ./${DIRECTORY}/*.sln ./${DIRECTORY}/**/*.csproj ./
 
-# Then within a RUN command to copy them to the right folders.
-RUN ls ./*
+
+RUN for file in $(ls *.csproj); do mkdir -p ${file%.*}/ && mv $file ${file%.*}/; done
+RUN dotnet restore
+
+# Copy all the source code across
+COPY ./${DIRECTORY}/. ./
 
 RUN dotnet restore
 
