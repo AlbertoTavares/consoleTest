@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 ARG DIRECTORY
 
-WORKDIR /usr/src/app
+#WORKDIR /usr/src/app
 
 
 # To make use of caching, and therefore make builds faster we'll copy the .sln and .csproj files, then do a dotnet restore.
