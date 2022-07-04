@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 COPY ./${DIRECTORY}/*.sln ./${DIRECTORY}/**/*.csproj ./
 
 # Then within a RUN command to copy them to the right folders.
-RUN for file in $(ls *.csproj); do mkdir -p ${file%.*}/ && mv $file ${file%.*}/; done
+RUN ls *.csproj
 
 RUN dotnet restore
 
