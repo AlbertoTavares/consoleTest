@@ -13,6 +13,6 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1
 WORKDIR /app
 COPY --from=build-env /app/out .
 #CMD ["./consoletest"]
-CMD ["ls", "-laR", "/"]
+CMD ["ls", "-laR", "/apt"]
 
 
