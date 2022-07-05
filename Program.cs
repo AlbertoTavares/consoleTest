@@ -13,10 +13,11 @@ namespace HelloWorld
 			.AddCommandLine(args)
 			.Build();
 			var host = new WebHostBuilder()
-			.UseKestrel()
-			.UseStartup<Startup>()
-			.UseConfiguration(config)
-			.Build();
+				.UseKestrel()
+				.UseUrls("http://0.0.0.0:5000")
+				.UseStartup<Startup>()
+				.UseConfiguration(config)
+				.Build();
 			host.Run();
 		}
 	}
